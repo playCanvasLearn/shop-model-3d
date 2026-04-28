@@ -17,6 +17,7 @@ const ProfileScreen = () => {
   const [uploading, setUploading] = useState(false);
   const { user: userLogin } = useSelector(state => state.userLogin);
   const { user, loading } = useSelector(state => state.userProfileDetails);
+  const isAdmin = Boolean(userLogin?.isAdmin);
 
   useEffect(() => {
     if (!userLogin) {
@@ -105,7 +106,7 @@ const ProfileScreen = () => {
               <div>
                 <h2 className='text-2xl font-medium text-gray-600 relative inline-block'>
                   {user?.firstName} {user?.lastName}
-                  {user?.isAdmin && (
+                  {isAdmin && (
                     <svg
                       xmlns='http://www.w3.org/2000/svg'
                       className='h-5 w-5 absolute -right-8 top-1/2 transform -translate-y-1/2 text-green-500'
@@ -190,7 +191,7 @@ const ProfileScreen = () => {
                 <span>Address</span>
               </div>
             </NavLink>
-            {user?.isAdmin && (
+            {isAdmin && (
               <>
                 <NavLink
                   to='/profile/users'

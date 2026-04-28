@@ -10,7 +10,7 @@ coverage
 /tmp
 # production
 /client/build
-
+/.idea
 
 # misc
 

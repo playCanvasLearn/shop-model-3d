@@ -50,9 +50,8 @@ function App() {
               <Route path="/shoedraco" element={<ShoeDraco />} />
               <Route path="search/:keyword" element={<HomeScreen />} />
               <Route path="product/:id" element={<ProductScreen />} />
-              <Route path="cart" element={<CartScreen />}>
-                <Route path="/:id" element={<CartScreen />} />
-              </Route>
+              <Route path="cart" element={<CartScreen />} />
+              <Route path="cart/:id" element={<CartScreen />} />
               <Route path="shipping" element={<ShippingScreen />} />
               <Route path="payment" element={<PaymentScreen />} />
               <Route path="placeorder" element={<PlaceOrderScreen />} />
@@ -67,20 +66,20 @@ function App() {
               <Route path="login" element={<LoginScreen />} />
               {/* Start Dashboard Routes */}
               <Route path="profile" element={<ProfileScreen />}>
-                <Route path="/" element={<UserInfoScreen />} />
-                <Route path="/address" element={<UserAddressScreen />} />
-                <Route path="/users" element={<UserListScreen />} />
-                <Route path="/users/orders" element={<OrderListScreen />} />
-                <Route path="/users/:id" element={<UserEditScreen />} />
-                <Route path="/products" element={<ProductListScreen />} />
+                <Route index element={<UserInfoScreen />} />
+                <Route path="address" element={<UserAddressScreen />} />
+                <Route path="users" element={<UserListScreen />} />
+                <Route path="users/orders" element={<OrderListScreen />} />
+                <Route path="users/:id" element={<UserEditScreen />} />
+                <Route path="products" element={<ProductListScreen />} />
                 <Route
-                  path="/products/create"
+                  path="products/create"
                   element={<ProductCreateScreen />}
                 />
-                <Route path="/products/:id" element={<ProductEditScreen />} />
-                <Route path="/orderlist" element={<UserOrderListScreen />} />
+                <Route path="products/:id" element={<ProductEditScreen />} />
+                <Route path="orderlist" element={<UserOrderListScreen />} />
                 <Route
-                  path="/change-password"
+                  path="change-password"
                   element={<ChangePasswordScreen />}
                 />
               </Route>
